@@ -1,0 +1,9 @@
+## Interface: 60000
+## Author: me
+## Title: jMap
+## Notes: map stuff
+
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+
+code.lua
