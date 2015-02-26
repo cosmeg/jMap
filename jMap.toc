@@ -1,7 +1,8 @@
-## Interface: 60000
+## Interface: 60100
 ## Author: me
 ## Title: jMap
 ## Notes: map stuff
+## OptionalDeps: Squeenix
 
 ## LoadManagers: AddonLoader
 ## X-LoadOn-Always: delayed
