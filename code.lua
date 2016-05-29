@@ -75,3 +75,7 @@ MiniMapMailBorder:Hide()
 MiniMapMailFrame:ClearAllPoints()
 MiniMapMailFrame:SetPoint("TOPRIGHT", Minimap, "TOPRIGHT", 10, 8)
 MiniMapMailIcon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+-- can't check mail on a starter account
+if IsRestrictedAccount() then
+  MiniMapMailFrame:Hide()
+end
