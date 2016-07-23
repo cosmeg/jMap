@@ -64,6 +64,10 @@ local function styleLfgButton(...)
   QueueStatusFrame:SetClampedToScreen(true)
   QueueStatusMinimapButton:ClearAllPoints()
   QueueStatusMinimapButton:SetPoint("BOTTOMLEFT", Minimap, "BOTTOMLEFT", -5, -5)
+  -- legion bug - tooltip is behind bars, because it is constrained to the
+  -- strata of the parent
+  QueueStatusFrame:SetParent(nil)
+  QueueStatusFrame:SetFrameStrata("TOOLTIP")
 end
 hooksecurefunc("QueueStatusMinimapButton_OnShow", styleLfgButton)
 styleLfgButton()
