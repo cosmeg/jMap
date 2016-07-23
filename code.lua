@@ -83,3 +83,7 @@ MiniMapMailIcon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
 if IsRestrictedAccount() then
   MiniMapMailFrame:Hide()
 end
+
+
+-- this doesn't get moved properly by squeenix and will block buff tooltips
+MinimapCluster:EnableMouse(false)
