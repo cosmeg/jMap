@@ -54,6 +54,12 @@ function SlashCmdList.JTEST_JT(msg, editbox)
     local name, _, active, _ = GetTrackingInfo(index)
     SetTracking(index, not active)
     print(name .. " " .. tostring(not active))
+
+  elseif msg == "stable" then
+    local index = TRACKING["Stable Master"]
+    local name, _, active, _ = GetTrackingInfo(index)
+    SetTracking(index, not active)
+    print(name .. " " .. tostring(not active))
   end
 end
 
