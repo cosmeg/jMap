@@ -15,51 +15,29 @@ for index = 1, GetNumTrackingTypes() do
   TRACKING[name] = index
   --print(index.." "..name)
 end
+local function toggle(tracking)
+  local index = TRACKING[tracking]
+  local name, _, active, _ = GetTrackingInfo(index)
+  SetTracking(index, not active)
+  print(name .. " " .. tostring(not active))
+end
+
 SLASH_JTEST_JT1 = "/jt"
--- TODO DRY
 function SlashCmdList.JTEST_JT(msg, editbox)
   if msg == "pet" or msg == "pets" then
-    -- battle pets
-    local index = TRACKING["Track Pets"]
-    local name, _, active, _ = GetTrackingInfo(index)
-    SetTracking(index, not active)
-    print(name .. " " .. tostring(not active))
-
+    toggle("Track Pets")
   elseif msg == "mail" or msg == "mailbox" then
-    local index = TRACKING["Mailbox"]
-    local name, _, active, _ = GetTrackingInfo(index)
-    SetTracking(index, not active)
-    print(name .. " " .. tostring(not active))
-
+    toggle("Mailbox")
   elseif msg == "repair" then
-    local index = TRACKING["Repair"]
-    local name, _, active, _ = GetTrackingInfo(index)
-    SetTracking(index, not active)
-    print(name .. " " .. tostring(not active))
-
+    toggle("Repair")
   elseif msg == "inn" then
-    local index = TRACKING["Innkeeper"]
-    local name, _, active, _ = GetTrackingInfo(index)
-    SetTracking(index, not active)
-    print(name .. " " .. tostring(not active))
-
+    toggle("Innkeeper")
   elseif msg == "target" then
-    local index = TRACKING["Target"]
-    local name, _, active, _ = GetTrackingInfo(index)
-    SetTracking(index, not active)
-    print(name .. " " .. tostring(not active))
-
+    toggle("Target")
   elseif msg == "bank" then
-    local index = TRACKING["Banker"]
-    local name, _, active, _ = GetTrackingInfo(index)
-    SetTracking(index, not active)
-    print(name .. " " .. tostring(not active))
-
+    toggle("Banker")
   elseif msg == "stable" then
-    local index = TRACKING["Stable Master"]
-    local name, _, active, _ = GetTrackingInfo(index)
-    SetTracking(index, not active)
-    print(name .. " " .. tostring(not active))
+    toggle("Stable Master")
   end
 end
 
