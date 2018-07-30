@@ -32,7 +32,7 @@ function SlashCmdList.JTEST_JT(msg, editbox)
     toggle("Repair")
   elseif msg == "inn" then
     toggle("Innkeeper")
-  elseif msg == "target" then
+  elseif msg == "target" or msg == "tar" then
     toggle("Target")
   elseif msg == "bank" then
     toggle("Banker")
