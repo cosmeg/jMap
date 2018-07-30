@@ -104,3 +104,9 @@ f:SetScript("OnMouseWheel", function(frame, delta)
     MinimapZoomOut:Click()
   end
 end)
+
+
+-- fade quest markers on world map
+hooksecurefunc(QuestPinMixin, "OnLoad", function(self)
+  self:SetAlpha(0.7)
+end)
