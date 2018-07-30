@@ -22,8 +22,8 @@ local function toggle(tracking)
   print(name .. " " .. tostring(not active))
 end
 
-SLASH_JTEST_JT1 = "/jt"
-function SlashCmdList.JTEST_JT(msg, editbox)
+SLASH_JMAP_JT1 = "/jt"
+function SlashCmdList.JMAP_JT(msg, editbox)
   if msg == "pet" or msg == "pets" then
     toggle("Track Pets")
   elseif msg == "mail" or msg == "mailbox" then
@@ -74,3 +74,33 @@ end
 
 -- this doesn't get moved properly by squeenix and will block buff tooltips
 MinimapCluster:EnableMouse(false)
+
+
+-- we don't move MinimapCluster because other things may be anchored from it
+Minimap:ClearAllPoints()
+Minimap:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -5, 5)
+Minimap:SetScale(1.225)
+
+-- make square
+Minimap:SetMaskTexture("Interface\\Buttons\\WHITE8X8")
+
+GameTimeFrame:Hide()
+TimeManagerClockButton:Hide()
+MinimapBackdrop:Hide()
+MinimapBorderTop:Hide()
+MinimapZoneText:Hide()
+
+-- support scrolling for zoom
+local f = CreateFrame("Frame", nil, Minimap)
+f:SetFrameStrata("LOW")
+f:EnableMouse(false)
+f:SetPoint("TOPLEFT", Minimap, "TOPLEFT")
+f:SetPoint("BOTTOMRIGHT", Minimap, "BOTTOMRIGHT")
+f:EnableMouseWheel(true)
+f:SetScript("OnMouseWheel", function(frame, delta)
+  if delta > 0 then
+    MinimapZoomIn:Click()
+  elseif delta < 0 then
+    MinimapZoomOut:Click()
+  end
+end)
