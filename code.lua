@@ -86,8 +86,11 @@ Minimap:SetMaskTexture("Interface\\Buttons\\WHITE8X8")
 
 GameTimeFrame:Hide()
 TimeManagerClockButton:Hide()
-MinimapBackdrop:Hide()
+MinimapBorder:Hide()
 MinimapBorderTop:Hide()
+MinimapZoomIn:Hide()
+MinimapZoomOut:Hide()
+MiniMapTracking:Hide()
 MinimapZoneText:Hide()
 
 -- support scrolling for zoom
