@@ -38,6 +38,8 @@ function SlashCmdList.JMAP_JT(msg, editbox)
     toggle("Banker")
   elseif msg == "stable" then
     toggle("Stable Master")
+  elseif msg == "llq"  or msg == "trivial" then
+    toggle("Trivial Quests")
   end
 end
 
