@@ -93,6 +93,7 @@ MinimapBorderTop:Hide()
 MinimapZoomIn:Hide()
 MinimapZoomOut:Hide()
 MiniMapTracking:Hide()
+MiniMapWorldMapButton:Hide()
 MinimapZoneText:Hide()
 
 -- support scrolling for zoom
