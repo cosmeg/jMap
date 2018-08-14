@@ -96,6 +96,11 @@ MiniMapTracking:Hide()
 MiniMapWorldMapButton:Hide()
 MinimapZoneText:Hide()
 
+GarrisonLandingPageMinimapButton:SetScript("OnShow", function(self, event, ...)
+  self:Hide()
+end)
+GarrisonLandingPageMinimapButton:Hide()
+
 -- support scrolling for zoom
 local f = CreateFrame("Frame", nil, Minimap)
 f:SetFrameStrata("LOW")
