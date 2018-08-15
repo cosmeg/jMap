@@ -121,3 +121,7 @@ end)
 hooksecurefunc(QuestPinMixin, "OnLoad", function(self)
   self:SetAlpha(0.7)
 end)
+
+hooksecurefunc(WorldQuestPinMixin, "OnLoad", function(self)
+  self:SetAlpha(0.7)
+end)
