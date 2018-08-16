@@ -125,3 +125,7 @@ end)
 hooksecurefunc(WorldQuestPinMixin, "OnLoad", function(self)
   self:SetAlpha(0.7)
 end)
+
+
+MiniMapInstanceDifficulty:ClearAllPoints()
+MiniMapInstanceDifficulty:SetPoint("TOPLEFT", Minimap, "TOPLEFT", -5, 5)
